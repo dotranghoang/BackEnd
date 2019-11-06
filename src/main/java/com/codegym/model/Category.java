@@ -12,12 +12,9 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String category;
+    private String nameCategory;
 
-    public Category(String category, List<Book> books) {
-        this.category = category;
-        this.books = books;
-    }
+
 
     @JsonIgnore
     @OneToMany(targetEntity = Book.class, mappedBy = "category", cascade = CascadeType.ALL)
@@ -34,8 +31,8 @@ public class Category {
     public Category() {
     }
 
-    public Category(String category) {
-        this.category = category;
+    public Category(String nameCategory) {
+        this.nameCategory = nameCategory;
     }
 
     public Long getId() {
@@ -46,11 +43,11 @@ public class Category {
         this.id = id;
     }
 
-    public String getCategory() {
-        return category;
+    public String getNameCategory() {
+        return nameCategory;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setNameCategory(String nameCategory) {
+        this.nameCategory = nameCategory;
     }
 }

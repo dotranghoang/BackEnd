@@ -50,7 +50,7 @@ public class ApiStatusController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        status1.setStatus(status.getStatus());
+        status1.setNameStatus(status.getNameStatus());
         statusService.save(status1);
 
         return new ResponseEntity<>(status1,HttpStatus.OK);

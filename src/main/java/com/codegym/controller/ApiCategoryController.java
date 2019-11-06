@@ -50,7 +50,7 @@ public class ApiCategoryController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        category1.setCategory(category.getCategory());
+        category1.setNameCategory(category.getNameCategory());
         categoryService.save(category1);
 
         return new ResponseEntity<>(category1,HttpStatus.OK);

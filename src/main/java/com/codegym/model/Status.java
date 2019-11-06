@@ -12,16 +12,13 @@ public class Status {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String status;
+    private String nameStatus;
 
     @JsonIgnore
     @OneToMany(targetEntity = Book.class, mappedBy = "status", cascade = CascadeType.ALL)
     private List<Book> books;
 
-    public Status(String status, List<Book> books) {
-        this.status = status;
-        this.books = books;
-    }
+
 
     public List<Book> getBooks() {
         return books;
@@ -34,8 +31,8 @@ public class Status {
     public Status() {
     }
 
-    public Status(String status) {
-        this.status = status;
+    public Status(String nameStatus) {
+        this.nameStatus = nameStatus;
     }
 
     public Long getId() {
@@ -46,12 +43,12 @@ public class Status {
         this.id = id;
     }
 
-    public String getStatus() {
-        return status;
+    public String getNameStatus() {
+        return nameStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setNameStatus(String nameStatus) {
+        this.nameStatus = nameStatus;
     }
 }
 
